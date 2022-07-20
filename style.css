@@ -1,0 +1,8 @@
+*{
+    //border: red solid 1px;
+}
+
+#header, #game, #results{
+    text-align: center;
+    border: green solid 1px;
+}
