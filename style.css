@@ -1,8 +1,13 @@
 *{
-    //border: red solid 1px;
+    border: red solid 1px;
 }
 
 #header, #game, #results{
     text-align: center;
-    border: green solid 1px;
+    //border: green solid 1px;
+}
+
+button{
+    padding: 50px;
+    margin: 20px 0px;
 }

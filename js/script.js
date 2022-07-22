@@ -1,3 +1,16 @@
+let player = 0;
+let pc = 0;
+
+const rockBtn = document.getElementById("rock");
+rockBtn.addEventListener('click', playRock);
+
+const score = document.getElementById('score');
+
+const currentScore = document.getElementById('currentScore')
+
+const currentGame = document.getElementById('currentGame');
+
+
 function computerPlay () {
     let randomNumber = 0
     //Get a random number between 1 to 9
@@ -25,22 +38,39 @@ function playRock () {
     }
     else if (pcSelected === 'paper') {
         pc += 1
-        currentGame.innerHTML = "Paper! You lose.";
+        currentGame.innerHTML = "Paper! You lose";
     }
     else if (pcSelected === 'scissors') {
         player += 1
-        currentGame.innerHTML = "Scissors! You win.";
+        currentGame.innerHTML = "Scissors! You win";
     }
-    score.innerHTML = 'PC: ' + pc + ' You: ' + player; 
+    updateScore()
+     
+}
+
+//Updating
+function updateScore() {
+    currentScore.innerHTML = 'Current Score'
+    score.innerHTML = 'PC: ' + pc + ' You: ' + player;
+    if (pc === 5) {
+        currentScore.innerHTML =('GAME OVER');
+        reset();
+    } else if (player === 5) {
+        currentScore.innerHTML =('You won!');
+        reset();
+    }
+    
 }
 
 
-let player = 0;
-let pc = 0;
+function reset () {
+    player = 0
+    pc = 0
+    currentGame.innerHTML = '-'
+    
 
-const rockBtn = document.getElementById("rock");
-rockBtn.addEventListener('click', playRock);
 
-const score = document.getElementById('score');
 
-const currentGame = document.getElementById('currentGame');
+
+
+}
