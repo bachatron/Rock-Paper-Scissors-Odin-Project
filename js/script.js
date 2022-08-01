@@ -16,6 +16,10 @@ const currentScore = document.getElementById('currentScore')
 
 const currentGame = document.getElementById('currentGame');
 
+const pcAnimation = document.getElementById('pcAnimation');
+
+let audio  = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/click.mp3');
+let audio2 = new Audio('https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/clickUp.mp3')
 
 function computerPlay () {
     let randomNumber = 0
@@ -39,6 +43,9 @@ function computerPlay () {
 //This function check what happens when you choose play Rock.
 function playRock () {
     let pcSelected = computerPlay();
+    audio2.load();
+    audio2.play();
+    pcAnimation.innerHTML = `<img src="./img/${pcSelected}.png">`;
     if (pcSelected === 'rock') {
         currentGame.textContent = "DRAW";
     }
@@ -56,6 +63,9 @@ function playRock () {
 
 function playPaper () {
     let pcSelected = computerPlay();
+    audio2.load();
+    audio2.play();
+    pcAnimation.innerHTML = `<img src="./img/${pcSelected}.png">`;
     if (pcSelected === 'paper') {
         currentGame.textContent = "DRAW";
     }
@@ -73,6 +83,9 @@ function playPaper () {
 
 function playScissors () {
     let pcSelected = computerPlay();
+    audio2.load();
+    audio2.play();
+    pcAnimation.innerHTML = `<img src="./img/${pcSelected}.png">`;
     if (pcSelected === 'scissors') {
         currentGame.textContent = "DRAW";
     }
